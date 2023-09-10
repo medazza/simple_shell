@@ -11,7 +11,7 @@ int main(int argc, char **argv, char **env)
 	while (1 && !shell)
 	{
 		if (isatty(STDIN_FILENO) == 0)
-			shell != true;
+			shell = true;
 		write(STDOUT_FILENO, "$ ", 2);
 		n_char = _getline(&buffer, &buffer_size, STDIN_FILENO);
 		if (n_char == EOF)
@@ -33,4 +33,5 @@ int main(int argc, char **argv, char **env)
 		buffer_size = 0;
 		buffer = NULL;
 	}
+	return (0);
 }

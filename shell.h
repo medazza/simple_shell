@@ -19,13 +19,6 @@ extern char **environ;
 #define READ_SIZE 1024
 #define BUFSIZE 1024
 
-// char **split(char *s);
-// char *_getenv(const char *name);
-// char *full_path(char *command);
-// int _setenv(const char *name, const char *value, int overwrite);
-// int _unsetenv(const char *name);
-// void _execute(char *cmd, char **cmds, char **env);
-// void _builtInCmnd(char **commands, char **env);
 
 void free_array(char **array);
 int check_cmd(char *cmnd);
