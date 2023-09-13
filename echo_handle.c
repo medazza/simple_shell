@@ -2,10 +2,9 @@
 
 /**
  * handle_echo_args - handles the $ builtin cmnd
- * @args: array of strings
- * @status: exit status
+ * @args: array of str
+ * @status: exit the status
  */
-
 void handle_echo_args(char *args, int *status)
 {
 	char *res = NULL;
@@ -45,10 +44,10 @@ void handle_echo_args(char *args, int *status)
 }
 
 /**
- * handle_echo - handles the echo  with '"'
- * @args: array of strings
- * @status: exit status
- * Return: 1 command is a builtin, 0 else
+ * handle_echo - handles the echo  with '"'.
+ * @args: array of strs.
+ * @status: exit the status.
+ * Return: 1 if cmd is a builtin, 0 else.
  */
 
 int handle_echo(char **args, int *status)
@@ -68,7 +67,7 @@ int handle_echo(char **args, int *status)
 	if (_strncmp(args[0], "echo", 4) != 0)
 		return (0);
 	if (_strncmp(args[1], "$", 1) == 0 || _strncmp(args[1], "$$", 2) == 0 ||
-	    _strncmp(args[1], "$?", 2) == 0)
+			_strncmp(args[1], "$?", 2) == 0)
 	{
 		handle_echo_args(args[1], status);
 		return (1);

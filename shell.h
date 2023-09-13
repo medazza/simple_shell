@@ -64,7 +64,7 @@ char *_strdup(const char *str);
 char *_strchr(const char *s, char c);
 char *_strcatpath(const char *dest, const char *src);
 int _atoi(const char *s);
-void print_error(const char *argv, int count, const char *cmd, const char *msg);
+void print_err(const char *av, int count, const char *cmnd, const char *msg);
 
 /* funcs3.c */
 char *_strtok(char *str, const char *delim);

@@ -2,10 +2,9 @@
 
 /**
  * check_cmd - checks if exits a command
- * @cmnd: command to check
- * Return: 1 exits, 0 if not
+ * @cmnd: command to check.
+ * Return: 1 exits, 0 if not exists.
  */
-
 int check_cmd(char *cmnd)
 {
 	char *envPath = NULL, *pathCop = NULL;

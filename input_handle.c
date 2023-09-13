@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * tokenizez - tokenizes a string using a del
- * @str_input: string to tokenize
+ * tokenizez - tokenizes a str using a del
+ * @str_input: str to tokenize
  * @del: delimiter
  * Return: array of args
  */
@@ -11,7 +11,7 @@ char **tokenizez(char *str_input, char *del)
 {
 	char **args = NULL;
 	char *token = NULL;
-	int i = 0, buffersize = 0;
+	int ind = 0, buffersize = 0;
 
 	if (str_input == NULL)
 		return (NULL);
@@ -22,16 +22,16 @@ char **tokenizez(char *str_input, char *del)
 	token = strtok(str_input, del);
 	while (token != NULL)
 	{
-		args[i] = token;
+		args[ind] = token;
 		token = strtok(NULL, del);
-		i++;
+		ind++;
 	}
-	args[i] = NULL;
+	args[ind] = NULL;
 	return (args);
 }
 
 /**
- * handle_input - handles the input from the user 
+ * handle_input - handles the input from the user
  * @buffer: buffer to store the input
  * @env: env var
  * @argv: arguments vector
@@ -62,7 +62,7 @@ int handle_input(char *buffer, char **env, char **argv)
 
 /**
  * sigint_handler - handles SIGINT
- * @sign: signal to handle
+ * @sign: the signal to handle
  */
 
 void sigint_handler(int sign)

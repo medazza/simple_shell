@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * make_path - makes a path
- * @path: path to make
- * @cmnd: command to add to path
- * Return: path
+ * make_path - function that make a path.
+ * @path: path to make.
+ * @cmnd: cmd to add to path.
+ * Return: path.
  */
 
 char *make_path(char *path, char *cmnd)
@@ -21,9 +21,9 @@ char *make_path(char *path, char *cmnd)
 }
 
 /**
- * get_path - gets the path of a command
- * @cmnd: command to get the path of
- * Return: path of the command
+ * get_path - gets the path of a cmd.
+ * @cmnd: cmd to get the path of.
+ * Return: path of the cmd.
  */
 
 char *get_path(char *cmnd)

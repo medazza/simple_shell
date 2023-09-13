@@ -2,7 +2,7 @@
 
 /**
  * my_cd - changes the current working directory
- * @args: arguments
+ * @args: argums.
  */
 
 void my_cd(char **args)
@@ -61,11 +61,9 @@ void change_directory(char **dirs, char *cmnd_name)
 
 	if (chdir(dirs[0]) == -1)
 	{
-		print_error(cmnd_name, 0, dirs[0], "can't cd to ");
+		print_err(cmnd_name, 0, dirs[0], "can't cd to ");
 		return;
 	}
 	else
-	{
 		free(pwd);
-	}
 }

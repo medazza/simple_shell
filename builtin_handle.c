@@ -1,28 +1,28 @@
 #include "shell.h"
 
 /**
- * print_env - prints the environment variables
- * @env: env var
+ * print_env - prints the env var
+ * @env: env variable.
  * Return: void
  */
 
 void print_env(char **env)
 {
-	int i = 0;
+	int ind = 0;
 
-	while (env[i] != NULL)
+	while (env[ind] != NULL)
 	{
-		write(STDOUT_FILENO, env[i], _strlen(env[i]));
+		write(STDOUT_FILENO, env[ind], _strlen(env[ind]));
 		write(STDOUT_FILENO, "\n", 1);
-		i++;
+		ind++;
 	}
 }
 
 /**
- * builtins - handles the builtins
- * @args: array of strings
- * @env: environment variables
- * Return: 1 command is a builtin, 0 else
+ * builtins - handles the builtins cmds.
+ * @args: array of strs.
+ * @env: env variables.
+ * Return: 1 if command is a builtin, 0 else.
  */
 
 int builtins(char **args, char **env)
@@ -45,17 +45,17 @@ int builtins(char **args, char **env)
 
 int handle_builtins1(char **args, char **env)
 {
-	int i = 0;
+	int ind = 0;
 
 	if (_strncmp(args[0], "exit", 4) == 0)
 		exit(EXIT_SUCCESS);
 	if (_strncmp(args[0], "env", 3) == 0)
 	{
-		while (env[i] != NULL)
+		while (env[ind] != NULL)
 		{
-			write(STDOUT_FILENO, env[i], _strlen(env[i]));
+			write(STDOUT_FILENO, env[ind], _strlen(env[ind]));
 			write(STDOUT_FILENO, "\n", 1);
-			i++;
+			ind++;
 		}
 		return (1);
 	}
@@ -64,7 +64,7 @@ int handle_builtins1(char **args, char **env)
 
 /**
  * handle_builtins2 - handles the builtins
- * @args: array of strings
+ * @args: array of sts
  * Return: 1 command is a builtin, 0 else
  */
 
@@ -96,9 +96,9 @@ int handle_builtins2(char **args)
 }
 
 /**
- * handle_builtins3 - handles the builtins
- * @args: array of strings
- * Return: 1 command is a builtin, 0 else
+ * handle_builtins3 - handles the builtins.
+ * @args: array of strs.
+ * Return: 1 command is a builtin, 0 else.
  */
 
 int handle_builtins3(char **args)
