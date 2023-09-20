@@ -93,3 +93,23 @@ ssize_t _getline(char **bfr, size_t *bfrsize, int fd)
 	}
 	return (n_chars);
 }
+
+
+/**
+ * empty_line - execute if no command
+ * @l: buffer.
+ * Return: 0 or 1.
+ */
+
+int empty_line(const char *l)
+{
+	if (l == NULL)
+		return (1);
+	while (*l)
+	{
+		if (!isspace(*l) && *l != '\0')
+			return (0);
+		l++;
+	}
+	return (1);
+}

@@ -27,7 +27,7 @@ int main(int argc, char **argv, char **env)
 		}
 		if (buffer[n_char - 1] == '\n')
 			buffer[n_char - 1] = '\0';
-		if (buffer[0] == '\0')
+		if (buffer[0] == '\0' || empty_line(buffer))
 			continue;
 		if (strcmp(buffer, "exit") == 0)
 		{

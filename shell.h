@@ -13,6 +13,7 @@
 #include <stddef.h>
 #include <fcntl.h>
 #include <stdbool.h>
+#include <ctype.h>
 
 extern char **environ;
 
@@ -78,6 +79,6 @@ char *_strncat(char *dest, const char *src, int n);
 char *_strncpy(char *dest, const char *src, int n);
 void _puts(char *str);
 ssize_t _getline(char **buffer, size_t *bufsize, int fd);
-
+int empty_line(const char *l);
 
 #endif
