@@ -32,6 +32,7 @@ int main(int argc, char **argv, char **env)
 		if (strcmp(buffer, "exit") == 0)
 		{
 			free(buffer);
+			buffer = NULL;
 			break;
 		}
 		args = tokenizez(buffer, " \t\r\n\a");
@@ -42,10 +43,10 @@ int main(int argc, char **argv, char **env)
 			write(STDOUT_FILENO, "\n", 1);
 		}
 		else
-		{
 			run_cmd(args, env, argv);
-		}
 		free(args);
+		args = NULL;
 	}
+	free(buffer);
 	return (0);
 }
