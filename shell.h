@@ -27,6 +27,7 @@ char *get_path(char *cmd);
 char **tokenize(char *buf);
 char *_getenv(const char *key);
 int run_cmd(char **args, char **env, char **argv);
+void execute(char *cmnd, char **env, char **argv);
 
 /* path_handle.c */
 char *make_path(char *path, char *cmnd);
